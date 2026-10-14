@@ -1,0 +1,46 @@
+# McCosh 50 room configuration for room/extract_seats.py.
+# All "page" values are PDF points on sheet A-102.00 (plan scale 1/8" = 1'-0", so 9 pt = 1 ft).
+# Plan orientation on the sheet: north is up, the stage is at the west (left).
+
+[source]
+drawing = "room/drawing/A-102_from_McCosh_50_Summer_2020_Record_Drawings.pdf"
+seat_stroke_gray = 0.67          # chairs are drawn in this gray (RGB 0.67,0.67,0.67)
+
+[page]
+pt_per_ft = 9.0
+west_wall_x = 903.6              # inner face of the stage-side (west) wall, main plan
+centerline_y = 774.4             # north-south centerline of the room
+main_east_wall_x = 1426.9        # east wall in the main-floor plan
+balcony_east_wall_x = 1988.6     # same wall in the separate balcony plan (used to register the balcony)
+room_depth_ft = 58.1
+room_half_width_ft = 40.0
+
+[regions]                        # where to look for chairs on the sheet (page points)
+main    = { x0 = 880.0,  x1 = 1400.0, y0 = 380.0, y1 = 1120.0 }
+balcony = { x0 = 1720.0, x1 = 1960.0, y0 = 380.0, y1 = 1100.0 }
+
+[features]                       # room features, page points (main plan)
+stage = { y_north = 676.6, y_south = 874.4, x_front = 1000.8, corner_radius_ft = 3.3 }
+ramp  = { y_north = 480.5, y_south = 676.6, x_west = 905.3, x_east = 987.5 }
+booth = { y_north = 712.1, y_south = 840.5, x_west = 1310.8, x_east = 1385.8 }
+
+# ---------------------------------------------------------------------------
+# In-room corrections (verified by walking the room). Applied after extraction.
+# ---------------------------------------------------------------------------
+[[overrides.drop_outer_seat]]    # drawing shows 3 seats per side in MC row 13; room has 2 (inner positions)
+section = "Main Center"
+row = 13
+side = "left"                    # drop the seat nearest the left aisle
+verified = "2026-10-12"
+
+[[overrides.drop_outer_seat]]
+section = "Main Center"
+row = 13
+side = "right"                   # drop the seat nearest the right aisle
+verified = "2026-10-12"
+
+[overrides.left_handed]          # force handedness for specific seats (seat_id = true/false)
+"ML-12-D" = true                 # verified 2026-10-12 (desk beside a pillar)
+
+[overrides.unverified_left_handed]   # informational: drawn as left-handed, not yet checked in the room
+seats = ["MC-11-W", "MC-12-W"]

@@ -1,0 +1,17 @@
+# Generated outputs (contain student names once run on real data)
+output/
+
+# Real student data: never commit
+data/real/*
+!data/real/README.md
+
+# Architectural drawing: not ours to publish (see room/drawing/README.md)
+room/drawing/*.pdf
+
+# Python / OS clutter
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+.DS_Store

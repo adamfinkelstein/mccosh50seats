@@ -1,0 +1,43 @@
+# Exam configuration for component 2. Edit this for each new exam.
+
+[exam]
+course = "COS126 Midterm, Fall 2026"   # printed at the top of the handout and in page footers
+room_title = "McCosh 50 Seating"       # title on every chart
+extra_room = "JRR-A17"                 # where students in accommodations.txt take the exam
+seed = 0                               # random.seed for seat assignment (same seed -> same assignment)
+
+[inputs]                               # file names inside the data directory (e.g. data/sample/)
+enroll = "enroll.txt"                  # one student per line: YY/Last/First/Precept/netid/ID/
+accommodations = "accommodations.txt"  # netids, one per line (# comments allowed)
+lefty = "lefty.txt"                    # netids of students who need a left-handed desk
+
+[plan]
+# Every row uses a strict every-other-seat pattern: odd rows take both aisle ends (A, C, E, ...);
+# even rows take one end (A, C, E, ... or B, D, F, ...). Exactly as many left-handed desks are used
+# as there are left-handed students, and no one else sits at a left-handed desk. Among plans that
+# seat everyone, the plan minimizes "aisle-end repeats" (the same row end occupied in two
+# consecutive rows), i.e. consecutive even rows alternate sides where possible.
+
+# Rows never used (late arrivals sit here).
+reserved_rows = [
+  { level = "Main", row = 1 },
+]
+
+# Rows left empty when there is enough room without them (they are restored automatically if needed).
+avoid_rows_if_possible = [
+  { section = "Main Center", row = 13 },
+]
+
+# Booth-split rows in Main Center: groups are "left" / "right" of the AV booth.
+booth_split_rows = [11, 12, 13]
+
+# Force a pattern for a row group: side "L" = A, C, E...; "R" = B, D, F... (or X, Z beside the booth).
+fixed_patterns = [
+  { section = "Main Center", row = 11, group = "right", side = "R" },   # keep W empty (handedness unverified)
+  { section = "Main Center", row = 12, group = "right", side = "R" },
+]
+
+# Odd rows may leave their first aisle seat empty (still every other seat) to fine-tune the
+# left-handed count or reduce repeats. At most this many seats can be given up overall,
+# and never more than the slack (capacity minus students to seat).
+max_seats_given_up = 1

@@ -1,0 +1,13 @@
+# Python 3.11+ (uses the standard-library tomllib). Versions below are the ones the pipeline was built
+# and verified with; newer versions will probably work, and the tests will tell you if they don't.
+# cairosvg also needs the system Cairo library: macOS `brew install cairo`; Debian/Ubuntu `apt install libcairo2`.
+pymupdf==1.28.2
+numpy==2.4.4
+pandas==3.0.2
+scipy==1.17.1
+scikit-learn==1.8.0
+cairosvg==2.9.1
+pypdf==5.9.0
+reportlab==4.4.10
+faker==40.43.0
+pytest==9.1.1

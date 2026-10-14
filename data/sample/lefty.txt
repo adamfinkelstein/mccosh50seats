@@ -1,0 +1,15 @@
+# netids of students who need a left-handed desk (FAKE DATA)
+rw5866    # Rebecca Wagner
+tg9171    # Thomas Grimes
+pl7290    # Patty Lawrence
+jh0373    # Jennifer Hughes
+er6410    # Eric Rose
+th4262    # Tony Hoffman
+cn9184    # Craig Nash
+ac4247    # Amy Carter
+ta2583    # Timothy Allen
+kb0234    # Kara Brown
+eh8101    # Elizabeth Harris
+st5630    # Sherri Turner
+mb5489    # Maria Brown
+cm3606    # Cynthia Morgan

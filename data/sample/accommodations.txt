@@ -1,0 +1,4 @@
+# netids of students taking the exam in the extra room (FAKE DATA)
+tc2775    # Troy Collins
+cw9297    # Christine Williams
+al0038    # Alan Long

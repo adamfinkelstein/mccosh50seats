@@ -1,0 +1,32 @@
+{
+  "units": "feet; x = right of centerline as students face the stage, y = back from the stage wall",
+  "room": {
+    "x0": -40.0,
+    "x1": 40.0,
+    "y0": 0.0,
+    "y1": 58.1
+  },
+  "stage": {
+    "x0": -11.111,
+    "x1": 10.867,
+    "depth": 10.8,
+    "corner_radius": 3.3
+  },
+  "ramp": {
+    "x0": 10.867,
+    "x1": 32.656,
+    "y0": 0.189,
+    "y1": 9.322
+  },
+  "booth": {
+    "x0": -7.344,
+    "x1": 6.922,
+    "y0": 45.244,
+    "y1": 53.578
+  },
+  "balcony_display_shift": 24.12,
+  "unverified_left_handed": [
+    "MC-11-W",
+    "MC-12-W"
+  ]
+}
