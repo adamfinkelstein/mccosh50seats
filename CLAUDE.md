@@ -9,7 +9,7 @@ This code was consolidated from an exploratory session into a clean pipeline and
 reproduces the finalized Fall 2026 midterm plan exactly. On 2026-10-14 it was reproduced on the
 owner's Mac (Python 3.13.16 via pyenv, pinned in `.python-version`): every number below matched, and
 re-extraction left `room/seats.csv` byte-identical. It is on GitHub as `adamfinkelstein/mccosh50seats`
-(private until the owner has reviewed it), under the MIT license.
+(public since 2026-10-14), under the MIT license.
 
 ## Reproducing on a new machine
 
@@ -54,7 +54,7 @@ two charts, then tables by name and by seat) and one or two `output/sample/seats
    Also grep the staged files for a few real netids or names if real data is on the machine.
 3. Things that **should** be committed: all code, `room/seats.csv`, `room/room_geometry.json`, both
    config files, `data/sample/*`, tests, docs.
-4. The LICENSE is MIT. Making the repository public is the owner's call; don't change visibility unasked.
+4. The LICENSE is MIT. The repository is public: re-check the privacy items above before every push.
 
 ## Rules and conventions
 
